@@ -1,0 +1,22 @@
+[project]
+name = "job-agent-matcher"
+version = "0.1.0"
+description = "AI job collection and resume matching agent built around CDP-collected job data."
+requires-python = ">=3.10"
+dependencies = [
+    "pypdf>=4,<6",
+    "pydantic>=2.7,<3",
+    "sqlalchemy>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]

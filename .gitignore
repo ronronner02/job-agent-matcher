@@ -1,0 +1,56 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Local development and personal notes that are not part of the public project.
+MISSION.md
+NOTES.md
+RESOURCES.md
+assets/
+learning-records/
+lessons/
+reference/
+docs/daily/
+docs/interview-qa/
+
+# External scraper engine is an integration, not part of this repo.
+# Point BOSS_SCRAPER_ROOT at your local checkout instead.
+# Only the README explaining how to obtain it is committed.
+external/*
+!external/README.md
+
+# Local browser/session data must never be committed.
+.chrome-profile/
+chrome-profile/
+*.sqlite
+Cookies*
+Local State
+
+# Runtime data. Keep directory placeholders only.
+data/raw_jobs/*
+!data/raw_jobs/.gitkeep
+data/processed_jobs/*
+!data/processed_jobs/.gitkeep
+data/reports/*
+!data/reports/.gitkeep
+data/runs/*
+!data/runs/.gitkeep
+data/db/*
+!data/db/.gitkeep
+
+# Private resumes and exported platform data.
+resumes/
+private/*
+!private/.gitkeep
+*.pdf
+*.docx
