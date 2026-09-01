@@ -1,5 +1,7 @@
 # 面向 AI 岗位采集与简历匹配的招聘数据 Agent 系统
 
+[English summary](README.en.md)
+
 这个项目基于 `boss-zhipin-scraper` 的 Chrome CDP 岗位采集能力，但项目核心不是“网页自动点击”，而是把岗位数据变成可用于求职决策的结构化系统：**采集 → 详情合并 → 去重 → 归一化 → 入库 → JD 结构化 → 技能分析 → 简历匹配 → 最终报告**，一条命令跑通。
 
 ## 项目定位
@@ -327,3 +329,14 @@ python scripts/evaluate_job_agent.py --jobs data/raw_jobs/<real-export>.json --r
 ```
 
 评估口径和最近一次真实采集结果见 [`docs/evaluation.md`](docs/evaluation.md)。脚本会对缺少人工技能金标准或真实匹配结果的指标输出 `null`，避免使用不可验证的占位数字。
+
+## 许可与使用边界
+
+MIT License，见 [LICENSE](LICENSE)。
+
+使用前请注意本项目自带的合规边界（详见上文「合规边界」一节）：
+
+- 采集依赖使用者自己的浏览器登录态与专用 Chrome CDP 实例，本项目不内置任何账号凭据；
+- `private/` 与 `data/` 目录存放简历、采集结果与运行轨迹，已由 `.gitignore` 排除，不随仓库分发；
+- AI 匹配分析需要使用者自备 `AI_MATCHER_API_KEY` 或 `OPENAI_API_KEY`，密钥不入库、不上报；
+- 采集行为的频率与范围由使用者自行控制，需遵守目标站点的服务条款与当地法律。
